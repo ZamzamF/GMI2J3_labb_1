@@ -2,7 +2,7 @@
 This file contains Unit test for roman1.py
 The code is entirlly obtained by a walk trough demo in the book 'Dive Into Python 3'
 '''
-import roman1
+import roman
 import unittest
 
 # A test case & unit test for the below mentioned requirement for the to_roman() function in the roman1.py program
@@ -70,9 +70,8 @@ class KnownValues(unittest.TestCase):
     def test_to_roman_known_values(self):
         '''to_roman should give known result with known input'''
         for integer, numeral in self.known_values:
-            result = roman1.to_roman(integer) #Calls the function to be tested
+            result = roman.to_roman(integer) #Calls the function to be tested
             self.assertEqual(numeral, result) #Compares the outcomes - no match = fail, match = pass
-
 
 
 if __name__ == '__main__':
