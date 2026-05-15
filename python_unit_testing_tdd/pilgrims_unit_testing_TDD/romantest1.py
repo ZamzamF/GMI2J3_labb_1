@@ -5,9 +5,10 @@ The code is entirlly obtained by a walk trough demo in the book 'Dive Into Pytho
 import roman1
 import unittest
 
-# A test case for the below mentioned requirement for the to_roman() function in the roman1.py program
+# A test case & unit test for the below mentioned requirement for the to_roman() function in the roman1.py program
     # - The to_roman() function should return the Roman numeral representation for all integers 1 to 3999.
 class KnownValues(unittest.TestCase):
+    #Defines test data
     known_values = ( (1, 'I'),
                      (2, 'II'),
                      (3, 'III'),
@@ -65,13 +66,14 @@ class KnownValues(unittest.TestCase):
                      (3940, 'MMMCMXL'),
                      (3999, 'MMMCMXCIX'))
 
+    #Defines the unit test
     def test_to_roman_known_values(self):
         '''to_roman should give known result with known input'''
         for integer, numeral in self.known_values:
-            result = roman1.to_roman(integer)
-            self.assertEqual(numeral, result)
+            result = roman1.to_roman(integer) #Calls the function to be tested
+            self.assertEqual(numeral, result) #Compares the outcomes - no match = fail, match = pass
 
 
-#makes the code in this file executable
+
 if __name__ == '__main__':
     unittest.main()
