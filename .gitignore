@@ -1,3 +1,4 @@
 .vscode/
 folderReadME.md
 .venv/
+__pycache__/
